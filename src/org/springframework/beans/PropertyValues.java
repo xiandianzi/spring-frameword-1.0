@@ -18,6 +18,7 @@ package org.springframework.beans;
 
 /**
  * Object containing 0 or more PropertyValues comprising one update.
+ * 由包含一个或多个键值对的对象组成一个实例
  * @author Rod Johnson
  * @since 13 May 2001
  * @version $Id: PropertyValues.java,v 1.3 2004/03/18 02:46:12 trisberg Exp $

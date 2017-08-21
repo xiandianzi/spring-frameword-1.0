@@ -24,21 +24,26 @@ import java.util.Map;
  * The central interface of Spring's low-level JavaBeans infrastructure.
  * Typically not directly used by application code but rather implicitly
  * via a BeanFactory or a DataBinder.
+ * Spring的底层JavaBeans基础架构的中心接口。通常不是由应用程序代码直接使用，而是通过BeanFactory或DataBinder隐式使用。
  *
  * <p>To be implemented by classes that can manipulate Java beans.
  * Implementing classes have the ability to get and set property values
  * (individually or in bulk), get property descriptors and query the
  * readability and writability of properties.
+ * 由可以操纵Java bean的类实现,实现类可以单独的或批量的获取和设置属性值，获取属性的描述符以及查询属性的可读性和可写性
  *
  * <p>This interface supports <b>nested properties</b> enabling the setting
  * of properties on subproperties to an unlimited depth.
+ * 此接口支持嵌套属性，可以将子属性的属性设置为无限深度
  *
  * <p>If a property update causes an exception, a PropertyVetoException will be
  * thrown. Bulk updates continue after exceptions are encountered, throwing an
  * exception wrapping <b>all</b> exceptions encountered during the update.
+ * 如果属性更新发生异常，将会抛出一个PropertyVetoException异常。当在批量更新的时候，如果发生异常，更新操作会继续，最后将在更新期间发生的所有异常包装成一个异常抛出
  *
  * <p>BeanWrapper implementations can be used repeatedly, with their "target"
  * or wrapped object changed.
+ * 在他们的目标或包装对象已经改变后，BeanWapper的实现可以重用
  * 
  * @author Rod Johnson
  * @since 13 April 2001

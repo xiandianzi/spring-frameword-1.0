@@ -35,11 +35,15 @@ import org.springframework.beans.PropertyValues;
  * parameters as bean properties. A very handy superclass for any type of servlet.
  * Type conversion is automatic. It is also possible for subclasses to specify
  * required properties.
+ * 对HttpServlet做一个简单的扩展，将它的配置参数当作bean的属性，对于任何类型的servlet来说都是非常方便的父类。
+ * 类型转换是自动的;子类也可以指定所需的属性
  *
  * <p>This servlet leaves request handling to subclasses, inheriting the
  * default behaviour of HttpServlet.
+ * 这个servlet将请求的处理留给子类，继承了HttpServlet的默认行为
  *
  * <p>This servlet superclass has no dependency on a Spring application context.
+ * 这个servlet父类不依赖任何Spring相关的application context.
  *
  * @author Rod Johnson
  * @see #initServletBean
@@ -49,8 +53,8 @@ public abstract class HttpServletBean extends HttpServlet {
 	protected final Log logger = LogFactory.getLog(getClass());
 
 	/** 
-	 * List of required properties (Strings) that must be supplied as
-	 * config parameters to this servlet.
+	 * List of required properties (Strings) that must be supplied as config parameters to this servlet.
+	 * 所需的属性列表必需以配置参数的形式提供给本servlet
 	 */
 	private List requiredProperties = new ArrayList();
 
@@ -58,6 +62,8 @@ public abstract class HttpServletBean extends HttpServlet {
 	 * Subclasses can invoke this method to specify that this property
 	 * (which must match a JavaBean property they expose) is mandatory,
 	 * and must be supplied as a config parameter.
+	 * 子类必需调用这个方法指定requiredProperties,并且必需以配置参数的方式提供。
+	 * 
 	 * @param property name of the required property
 	 */
 	protected final void setRequiredProperty(String property) {
@@ -67,6 +73,7 @@ public abstract class HttpServletBean extends HttpServlet {
 	/**
 	 * Map config parameters onto bean properties of this servlet, and
 	 * invoke subclass initialization.
+	 * 将配置参数映射到此servlet的bean属性上，并调用子类初始化
 	 * @throws ServletException if bean properties are invalid (or required
 	 * properties are missing), or if subclass initialization fails.
 	 */
